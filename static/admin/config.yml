@@ -34,20 +34,16 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list" }
-      - {
-        label: "Ingredients",
-        name: "ingredients",
-        widget: "list",
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
         fields:
           - { label: Ingredient, name: ingredient, widget: "string" }
           - { label: Quantity, name: quantity, widget: "string" }
-        }
-      - {
-          label: "Instructions",
-          name: "instructions",
-          widget: "list",
+      -   label: "Instructions"
+          name: "instructions"
+          widget: "list"
           fields:
           - { label: Instruction, name: instruction, widget: "string" }
           - { label: Time, name: time, widget: "string" }
-        }
       - { label: "Tools", name: "tools", widget: "list" }
