@@ -72,14 +72,14 @@ export const ProductPageTemplate = ({
           <section className="recipe-content">
             <article>
               <h4>instructions</h4>
-              {instructions.map((item, index) => {
+              {instructions.map(({ instruction }, index) => {
                 return (
                   <div key={index} className="single-instruction">
                     <header>
                       <p>step {index + 1}</p>
                       <div></div>
                     </header>
-                    <p>{item}</p>
+                    <p>{instruction}</p>
                   </div>
                 )
               })}
@@ -87,10 +87,10 @@ export const ProductPageTemplate = ({
             <article className="second-column">
               <div>
                 <h4>ingredients</h4>
-                {ingredients.map((item, index) => {
+                {ingredients.map(({ ingredient }, index) => {
                   return (
                     <p key={index} className="single-ingredient">
-                      {item}
+                      {ingredient}
                     </p>
                   )
                 })}
@@ -109,44 +109,6 @@ export const ProductPageTemplate = ({
           </section>
        </div>
       </main>
-      
-
-    // <div className="content">
-    //   <FullWidthImage img={heroImage} title={title} />
-    //   <section className="section section--gradient">
-    //     <div className="container">
-    //       <div className="section">
-    //         <div className="columns">
-    //           <div className="column is-10 is-offset-1">
-    //             <Features gridItems={intro.blurbs} />
-    //             <div className="tile is-ancestor">
-    //               <div className="tile is-vertical">
-    //                 <div className="tile">
-    //                   <div className="tile is-parent is-vertical">
-    //                     <article className="tile is-child">
-    //                       <PreviewCompatibleImage imageInfo={main.image1} />
-    //                     </article>
-    //                   </div>
-    //                   <div className="tile is-parent">
-    //                     <article className="tile is-child">
-    //                       <PreviewCompatibleImage imageInfo={main.image2} />
-    //                     </article>
-    //                   </div>
-    //                 </div>
-    //                 <div className="tile is-parent">
-    //                   <article className="tile is-child">
-    //                     <PreviewCompatibleImage imageInfo={main.image3} />
-    //                   </article>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </section>
-    //   <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} />
-    // </div>
   );
 };
 
@@ -204,8 +166,14 @@ export const productPageQuery = graphql`
       frontmatter {
         title
         cookTime
-        ingredients
-        instructions
+        ingredients {
+          ingredient
+          quantity
+        }
+        instructions {
+          instruction
+          time
+        }
         tools
         tags
         description

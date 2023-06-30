@@ -10,11 +10,15 @@ description: Brewing with a Chemex probably seems like a complicated, time-consu
 tags:
   - brunch
 ingredients:
-  - Ingredients1
-  - Ingredients2
+  - ingredient: Ingredient 1
+    quantity: quantity
+  - ingredient: Ingredient 2
+    quantity: quantity
 instructions:
-  - Instruction1
-  - Instruction2
+  - instruction: instructions 1
+    time: 5
+  - instruction: instructions 2
+    time: 10
 tools:
   - tools1
   - tools2

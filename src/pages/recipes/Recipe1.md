@@ -11,11 +11,15 @@ description: The Coffee Taster’s Flavor Wheel, the official resource used by c
 tags:
   - breakfast
 ingredients:
-  - Ingredients1
-  - Ingredients2
+  - ingredient: Ingredient 1
+    quantity: quantity
+  - ingredient: Ingredient 2
+    quantity: quantity
 instructions:
-  - Instruction1
-  - Instruction2
+  - instruction: instructions 1
+    time: 5
+  - instruction: instructions 2
+    time: 10
 tools:
   - tools1
   - tools2

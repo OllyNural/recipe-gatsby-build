@@ -11,8 +11,14 @@ description: Some description
 tags:
   - brunch
 ingredients:
-  - none
+  - ingredient: Ingredient 1
+    quantity: quantity
+  - ingredient: Ingredient 2
+    quantity: quantity
 instructions:
-  - none
+  - instruction: instructions 1
+    time: 5
+  - instruction: instructions 2
+    time: 10
 tools:
   - asd
