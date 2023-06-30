@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const path = require("path");
+const slugify = require("slugify")
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.createPages = ({ actions, graphql }) => {
@@ -16,7 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               tags
-              categories
               templateKey
             }
           }
@@ -49,34 +49,25 @@ exports.createPages = ({ actions, graphql }) => {
     /**
      * Category Pages
      */
-    let categories = [];
+    let tags = [];
     // Iterate through each post, putting all found tags into `tags`
     posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.categories`)) {
-        categories = categories.concat(edge.node.frontmatter.categories);
+      if (_.get(edge, `node.frontmatter.tags`)) {
+        tags = tags.concat(edge.node.frontmatter.tags);
       }
     });
     // Eliminate duplicate tags
-    categories = _.uniq(categories);
+    tags = _.uniq(tags);
 
     // Make tag pages
-    categories.forEach((category) => {
-      const tagPath = `/${_.kebabCase(category)}/`;
-
-      console.log("category");
-      console.log({
-        path: tagPath,
-        component: path.resolve(`src/templates/categories.js`),
-        context: {
-          category,
-        },
-      });
+    tags.forEach((tag) => {
+      const tagSlug = slugify(tag, { lower: true })
 
       createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/categories.js`),
+        path: `/tags/${tagSlug}`,
+        component: path.resolve(`src/templates/tag-template.js`),
         context: {
-          category,
+          tag,
         },
       });
     });
@@ -113,7 +104,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const value = createFilePath({ node, getNode, basePath: 'src/pages/recipes', trailingSlash: false });
     createNodeField({
       name: `slug`,
       node,
