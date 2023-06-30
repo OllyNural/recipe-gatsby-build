@@ -37,4 +37,3 @@ collections:
       - { label: "Ingredients", name: "ingredients", widget: "list" }
       - { label: "Instructions", name: "instructions", widget: "list" }
       - { label: "Tools", name: "tools", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }

@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import slugify from 'slugify';
 import { Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs"
 
 // eslint-disable-next-line
@@ -15,11 +15,12 @@ export const ProductPageTemplate = ({
   cookTime,
   servings,
   tags,
-  pathToImage,
+  featuredimage,
   instructions,
   ingredients,
   tools
 }) => {
+  const pathToImage = getImage(featuredimage) 
   return (
     <main className="page">
        <div className="recipe-page">

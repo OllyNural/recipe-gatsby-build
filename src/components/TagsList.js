@@ -3,9 +3,8 @@ import setupTags from "../utils/setupTags"
 import { Link } from "gatsby"
 import slugify from "slugify"
 const TagsList = ({ recipes }) => {
-  console.log('TagsList')
-  console.log(recipes)
-  const newTags = setupTags(recipes)
+  const tags = recipes.map(({ tags }) => tags)
+  const newTags = setupTags(tags)
   return (
     <div className="tag-container">
       <h4>recipes</h4>
