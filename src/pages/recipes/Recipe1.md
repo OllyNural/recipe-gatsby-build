@@ -1,7 +1,7 @@
 ---
 templateKey: recipe
 featured: true
-title: Sage and Cheese Pasta Sauce
+title: Sage and Parmesan Pasta Sauce
 cookTime: 15
 prepTime: 5
 date: 2016-12-17T15:04:10.000Z
