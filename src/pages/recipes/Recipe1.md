@@ -43,7 +43,7 @@ instructions:
     time: 30 s
   - instruction: Add the Cream, Veg Stock Cube and the Parmesan cheese. Stir and
       bring to the boil. Reduce the heat to medium-low and simmer for 3-4 mins.
-      Stir in Salt and Pepper and set aside
+      Stir in Salt and Pepper and set aside.
     time: 5 m
   - instruction: "When the Pasta has 2 minutes left, add the Spinach to the pasta
       pot. Once finished, set aside a cup of the pasta water, and drain the

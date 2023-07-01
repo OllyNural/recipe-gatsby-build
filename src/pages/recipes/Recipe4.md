@@ -17,8 +17,8 @@ ingredients:
     quantity: quantity
 instructions:
   - instruction: instructions 1
-    time: 5
+    time: "5"
   - instruction: instructions 2
-    time: 10
+    time: "10"
 tools:
   - asd
